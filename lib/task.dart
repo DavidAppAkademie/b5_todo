@@ -13,26 +13,17 @@ class Task {
 
   // METHODS
   void setCompleted() {
-    if (isDone == true) {
-      isDone = false;
-    } else {
-      isDone = true;
-    }
+    isDone = !isDone;
   }
 }
 
 List<Task> tasks = [
-  Task('Gassi gehen', false),
-  Task('Arzt besuchen', false),
+  Task('Gassi gehen', true),
+  Task('Arzt besuchen', true),
 ];
 
 // immer wenn man auf das Plus klickt, wird diese Funktion aufgerufen
-void onAddButtonPressed(String userInput) {
-  Task t = Task(userInput, false);
-  tasks.add(t);
-}
+void onAddButtonPressed(String userInput) {}
 
 // immer wenn man das Häkchen anklickt, wird diese Funktion aufgerufen
-void onCheckboxChecked(Task t) {
-  t.setCompleted();
-}
+void onCheckboxChecked(Task t) {}
